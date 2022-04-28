@@ -76,8 +76,7 @@ class TicketController extends ResourceController
             'total'     => $total,
             'status'    => $status,
             // 'tickets'   => $tickets->findAll(),
-            'tickets'   => $tickets->paginate(10),
-            'pager'     => $tickets->pager,
+            'tickets'   => $tickets->paginate(10)
         ];
 
         return view('tickets/index', $data);
