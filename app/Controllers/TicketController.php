@@ -28,43 +28,9 @@ class TicketController extends ResourceController
 
     public function index()
     {
-
         $tickets = new Ticket();
-
-
-        /*
-        $data = [
-            'title'     => 'Tickets de soporte',
-            'status'    =>
-            'tickets'   => $tickets->orderBy('id', 'desc')->findAll()
-        ];
-
-        return view('tickets/index', $data);
-        */
         $db = \Config\Database::connect();
-
-        /*
-        $query   = $db->query('SELECT t.title as asunto, t.description as descripcion, s.name as estado, p.name as prioridad
-            FROM tickets as t
-            join priorities as p
-                on t.priority = p.id
-            join status as s
-                on t.status = s.id'
-            );
-        */
-
-        /*
-        $builder = $db->table('tickets');
-        $builder->select('tickets.title', 'status.name', 'priorities.name');
-        $builder->join('status', 'tickets.status = status.id');
-        $builder->join('priorities', 'tickets.priority = priorities.id');
-        $data = $builder->get();
-        */
-
-
-
         $total = $db->table('tickets')->countAll();
-
         $tickets = model('Ticket');
 
         $builder = $db->table('status');
@@ -76,7 +42,7 @@ class TicketController extends ResourceController
             'total'     => $total,
             'status'    => $status,
             // 'tickets'   => $tickets->findAll(),
-            'tickets'   => $tickets->paginate(10)
+            'tickets'   => $tickets->orderBy('status', 'ASC')->findAll()
         ];
 
         return view('tickets/index', $data);
