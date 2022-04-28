@@ -9,7 +9,7 @@
     </p>
 
     <span class="tag is-info">
-      <?= echo $status; ?>
+      
     </span>
 
   </section>

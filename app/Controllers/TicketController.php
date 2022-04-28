@@ -22,6 +22,7 @@ class TicketController extends ResourceController
     {
         $db = db_connect();
         $this->db = db_connect();
+        $pager = \Config\Services::pager();
     }
 
 
@@ -74,7 +75,9 @@ class TicketController extends ResourceController
             'title'     => 'Otro',
             'total'     => $total,
             'status'    => $status,
-            'tickets'   => $tickets->findAll(),
+            // 'tickets'   => $tickets->findAll(),
+            'tickets'   => $tickets->paginate(10),
+            'pager'     => $tickets->pager,
         ];
 
         return view('tickets/index', $data);

@@ -53,6 +53,9 @@
 			<?php endif ?>
 			</tbody>
 		</table>
+
+		<?= $pager->simpleLinks() ?>
+
 	</section>
 
 <?= $this->endSection(); ?>
