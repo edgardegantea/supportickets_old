@@ -10,7 +10,7 @@
 					<th>Estado</th>
 					<th>Acciones</th>
 				</tr>
-			</thead>	
+			</thead>
 
 			<tbody>
 			<?php if (!empty($tickets) && is_array($tickets)): ?>
@@ -20,7 +20,7 @@
 						<td width="50%" class="py-3 is-justify-content-flex-start"><?= esc($ticket['description']) ?></td>
 						<td width="10%" class="py-3">
 							<div class="has-text-centered">
-								<?php 
+								<?php
 									if ($ticket['status'] == 's01') {
 										echo 'No iniciado';
 									} else if ($ticket['status'] == 's02') {
@@ -54,7 +54,6 @@
 			</tbody>
 		</table>
 
-		<?= $pager->simpleLinks() ?>
 
 	</section>
 
