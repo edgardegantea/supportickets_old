@@ -41,7 +41,7 @@ class TicketController extends ResourceController
             'title'     => 'Otro',
             'total'     => $total,
             'status'    => $status,
-            // 'tickets'   => $tickets->findAll(),
+            // // 'tickets'   => $tickets->findAll(),
             'tickets'   => $tickets->orderBy('status', 'ASC')->findAll()
         ];
 
