@@ -16,33 +16,36 @@ class TicketController extends ResourceController
      * @return mixed
      */
 
+     private $db;
+
     public function __construct()
     {
         $db = db_connect();
+        $this->db = db_connect();
     }
 
 
     public function index()
     {
-        
+
         $tickets = new Ticket();
 
-        
+
         /*
         $data = [
             'title'     => 'Tickets de soporte',
-            'status'    => 
+            'status'    =>
             'tickets'   => $tickets->orderBy('id', 'desc')->findAll()
         ];
 
         return view('tickets/index', $data);
         */
         $db = \Config\Database::connect();
-        
+
         /*
-        $query   = $db->query('SELECT t.title as asunto, t.description as descripcion, s.name as estado, p.name as prioridad 
-            FROM tickets as t 
-            join priorities as p 
+        $query   = $db->query('SELECT t.title as asunto, t.description as descripcion, s.name as estado, p.name as prioridad
+            FROM tickets as t
+            join priorities as p
                 on t.priority = p.id
             join status as s
                 on t.status = s.id'
@@ -57,10 +60,10 @@ class TicketController extends ResourceController
         $data = $builder->get();
         */
 
-        
+
 
         $total = $db->table('tickets')->countAll();
-        
+
         $tickets = model('Ticket');
 
         $builder = $db->table('status');
@@ -70,7 +73,7 @@ class TicketController extends ResourceController
         $data = [
             'title'     => 'Otro',
             'total'     => $total,
-            'status'   => $status,
+            'status'    => $status,
             'tickets'   => $tickets->findAll(),
         ];
 
@@ -84,7 +87,28 @@ class TicketController extends ResourceController
      */
     public function show($id = null)
     {
-        return view('tickets/show');
+        $db = db_connect();
+        $ticket = new Ticket();
+
+        // $statusModel = new StatusModel();
+        // $builder = $this->statusModel->select('name');
+        // $builder->join('status', 'status.id = tickets.status');
+        // $estado   = $builder->get();
+
+
+        $builder = $this->db->table("status as s");
+        $builder->select('s.name');
+        $builder->join('tickets as t', 's.id = t.status');
+        $st = $builder->get()->getResult();
+
+        $data = [
+          'ticket'  => $ticket->where('id', $id)->first(),
+          // 'status'  => $this->db->select('status.name')->from('status')->join('tickets', 'tickets.status = status.id')->get(),
+          // 'status'  => $db->query('select * from status inner join tickets on status.id = tickets.status'),
+          'status'  => $st,
+          'title'   => "Información del ticket de soporte seleccionado"
+        ];
+        return view('tickets/show', $data);
     }
 
     /**
@@ -167,10 +191,54 @@ class TicketController extends ResourceController
         $ticket = new Ticket();
         $data = [
             'title'     => 'Tickets en modo tabular',
-            'tickets'   => $ticket->orderBy('id', 'desc')->findAll()
+            'tickets'   => $ticket->orderBy('status', 'ASC')->findAll()
         ];
 
         return view('tickets/table', $data);
-
     }
+
+    public function tableStatusO1()
+    {
+        $ticket = new Ticket();
+        $data = [
+            'title'     => 'Todos los tickets de soporte',
+            'tickets'   => $ticket->where('status', 's01')->findAll()
+        ];
+
+        return view('tickets/tableS01', $data);
+    }
+
+    public function tableStatusO2()
+    {
+        $ticket = new Ticket();
+        $data = [
+            'title'     => 'Tickets de soporte iniciados',
+            'tickets'   => $ticket->where('status', 's02')->findAll()
+        ];
+
+        return view('tickets/tableS01', $data);
+    }
+    public function tableStatusO5()
+    {
+        $ticket = new Ticket();
+        $data = [
+            'title'     => 'Tickets de soporte finalizados',
+            'tickets'   => $ticket->where('status', 's05')->findAll()
+        ];
+
+        return view('tickets/tableS01', $data);
+    }
+
+    public function tableStatusO7()
+    {
+        $ticket = new Ticket();
+        $data = [
+            'title'     => 'Tickets de soporte Re-abiertos',
+            'tickets'   => $ticket->where('status', 's07')->findAll()
+        ];
+
+        return view('tickets/tableS01', $data);
+    }
+
+
 }

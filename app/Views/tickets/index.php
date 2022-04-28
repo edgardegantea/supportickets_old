@@ -24,7 +24,7 @@
 
 							<p class="has-text-centered">
 
-								<?php 
+								<?php
 								if ($ticket['status'] == 's01') {
 									echo 'Estado 1';
 								} else if ($ticket['status'] == 's02') {
@@ -40,7 +40,7 @@
 							</p>
 						</div>
 						<footer class="card-footer">
-							<a class="card-footer-item">
+							<a class="card-footer-item" href="<?= base_url('tickets/show/'.$ticket['id']); ?>">
 								Ver
 							</a>
 							<a class="card-footer-item">

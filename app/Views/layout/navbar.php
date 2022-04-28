@@ -31,8 +31,17 @@
           <a class="navbar-item" href="<?php echo base_url('tickets/table'); ?>">
             Tickets (TABULAR)
           </a>
-          <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-            Columns
+          <a class="navbar-item" href="<?php echo base_url('tickets/tableS01'); ?>">
+            No iniciado
+          </a>
+          <a class="navbar-item" href="<?php echo base_url('tickets/tableS02'); ?>">
+            Iniciado
+          </a>
+          <a class="navbar-item" href="<?php echo base_url('tickets/tableS05'); ?>">
+            Finalizados
+          </a>
+          <a class="navbar-item" href="<?php echo base_url('tickets/tableS07'); ?>">
+            Re-abiertos
           </a>
           <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
             Layout
@@ -49,6 +58,46 @@
           </a>
         </div>
       </div>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="<?php echo base_url('tickets'); ?>">
+          Kanban
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="<?php echo base_url('tickets'); ?>">
+            Tickets (CARDS)
+          </a>
+          <a class="navbar-item" href="<?php echo base_url('tickets/table'); ?>">
+            Tickets (TABULAR)
+          </a>
+          <a class="navbar-item" href="<?php echo base_url('tickets/tableS01'); ?>">
+            No iniciado
+          </a>
+          <a class="navbar-item" href="<?php echo base_url('tickets/tableS02'); ?>">
+            Iniciado
+          </a>
+          <a class="navbar-item" href="<?php echo base_url('tickets/tableS05'); ?>">
+            Finalizados
+          </a>
+          <a class="navbar-item" href="<?php echo base_url('tickets/tableS07'); ?>">
+            Re-abiertos
+          </a>
+          <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
+            Layout
+          </a>
+          <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
+            Form
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
+            Elements
+          </a>
+          <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
+            Components
+          </a>
+        </div>
+      </div>
+
     </div>
 
 <!--
