@@ -38,17 +38,17 @@
 							<p class="has-text-centered">
 
 								<?php
-								if ($ticket['status'] == 's01') {
-									echo 'Estado 1';
-								} else if ($ticket['status'] == 's02') {
-									echo 'Estado 2';
-								} else if ($ticket['status'] == 's03') {
-										echo 'Estado 3';
-								} else if ($ticket['status'] == 's04') {
-									echo 'Estado 4';
-								} else {
-									echo 'Otro estado';
-								}
+									if ($ticket['status'] == 's01') {
+										echo 'Estado 1';
+									} else if ($ticket['status'] == 's02') {
+										echo 'Estado 2';
+									} else if ($ticket['status'] == 's03') {
+											echo 'Estado 3';
+									} else if ($ticket['status'] == 's04') {
+										echo 'Estado 4';
+									} else {
+										echo 'Otro estado';
+									}
 								?>
 							</p>
 						</div>
