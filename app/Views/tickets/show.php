@@ -36,7 +36,9 @@
 		  <!-- Right side -->
 		  <div class="level-right">
 		    <p class="level-item"><a>Seguimiento</a></p>
-		    <p class="level-item"><a class="button is-success">Contactar</a></p>
+		    <p class="level-item is-large">
+				<a class="button is-success">Contactar</a>
+			</p>
 		  </div>
 		</nav>
 

@@ -15,7 +15,26 @@
 			<tbody>
 			<?php if (!empty($tickets) && is_array($tickets)): ?>
 				<?php foreach ($tickets as $ticket): ?>
-					<tr>
+					<?php
+						if ($ticket['status'] == 's01') {
+							echo '<tr class="has-background-danger-light">';
+						} else if ($ticket['status'] == 's02') {
+							echo '<tr class="has-background-info-light">';
+						} else if ($ticket['status'] == 's03') {
+							echo '<tr class="has-background-danger-dark">';
+						} else if ($ticket['status'] == 's04') {
+							echo '<tr style="background: #45D9B9">';
+						} else if ($ticket['status'] == 's05') {
+							echo '<tr style="background: #45D9B9">';
+						} else if ($ticket['status'] == 's06') {
+							echo '<tr style="background: #45D9B9">';
+						} else if ($ticket['status'] == 's07') {
+							echo '<tr style="background: #45D9B9">';
+						} else if ($ticket['status'] == 's08') {
+							echo '<tr style="background: #45D9B9">';
+						}
+					?>
+
 						<td width="20%" class="py-3"><p class="is-uppercase has-text-weight-semibold"><?= esc($ticket['title']) ?></p></td>
 						<td width="50%" class="py-3 is-justify-content-flex-start"><?= esc($ticket['description']) ?></td>
 						<td width="10%" class="py-3">
@@ -43,7 +62,9 @@
 						</td>
 						<td width="*" class="py-3">
 							<div class="buttons has-addons">
-								<a href="#" class="button is-info is-small">Ver</a>
+								<a class="button is-info is-small" href="<?= base_url('tickets/show/'.$ticket['id']); ?>">
+									Ver
+								</a>
 								<a href="#" class="button is-info is-small">Editar</a>
 								<a href="#" class="button is-danger is-small">Eliminar</a>
 							</div>

@@ -11,9 +11,11 @@
 	<?= $this->include('layout/navbar') ?>
 	<?= $this->include('layout/header') ?>
 
-	<?= $this->renderSection('content') ?> 
+	<?= $this->renderSection('content') ?>
 
 	<?= $this->include('layout/footer') ?>
+
+	<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>" charset="utf-8"></script>
 
 </body>
 </html>
