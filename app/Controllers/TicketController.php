@@ -10,12 +10,6 @@ use App\Models\PriorityModel;
 
 class TicketController extends ResourceController
 {
-    /**
-     * Return an array of resource objects, themselves in array format
-     *
-     * @return mixed
-     */
-
      private $db;
 
     public function __construct()
