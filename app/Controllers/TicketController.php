@@ -42,7 +42,8 @@ class TicketController extends ResourceController
             'total'     => $total,
             'status'    => $status,
             // // 'tickets'   => $tickets->findAll(),
-            'tickets'   => $tickets->orderBy('status', 'ASC')->findAll()
+            // 'tickets'   => $tickets->orderBy('status', 'ASC')->findAll()
+            'tickets'   => $tickets->limit(30)
         ];
 
         return view('tickets/index', $data);
@@ -159,7 +160,8 @@ class TicketController extends ResourceController
         $ticket = new Ticket();
         $data = [
             'title'     => 'Tickets en modo tabular',
-            'tickets'   => $ticket->orderBy('status', 'ASC')->findAll()
+            // 'tickets'   => $ticket->orderBy('status', 'ASC')->findAll()
+            'tickets'   => $ticket->limit(50)
         ];
 
         return view('tickets/table', $data);
