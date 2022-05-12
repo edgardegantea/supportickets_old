@@ -74,11 +74,7 @@ class TicketController extends ResourceController
         return view('tickets/show', $data);
     }
 
-    /**
-     * Return a new resource object, with default properties
-     *
-     * @return mixed
-     */
+
     public function new()
     {
         $categories = model('CategoryModel');
@@ -93,11 +89,7 @@ class TicketController extends ResourceController
         return view('tickets/new', $data);
     }
 
-    /**
-     * Create a new resource object, from "posted" parameters
-     *
-     * @return mixed
-     */
+
     public function create()
     {
         $ticket = model(Ticket::class);
@@ -119,11 +111,7 @@ class TicketController extends ResourceController
         }
     }
 
-    /**
-     * Return the editable properties of a resource object
-     *
-     * @return mixed
-     */
+
     public function edit($id = null)
     {
         return view('tickets/edit');
@@ -139,11 +127,7 @@ class TicketController extends ResourceController
         //
     }
 
-    /**
-     * Delete the designated resource object from the model
-     *
-     * @return mixed
-     */
+
     public function delete($id = null)
     {
         //
