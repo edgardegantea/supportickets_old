@@ -53,12 +53,6 @@ class TicketController extends ResourceController
         $db = db_connect();
         $ticket = new Ticket();
 
-        // $statusModel = new StatusModel();
-        // $builder = $this->statusModel->select('name');
-        // $builder->join('status', 'status.id = tickets.status');
-        // $estado   = $builder->get();
-
-
         $builder = $this->db->table("status as s");
         $builder->select('s.name');
         $builder->join('tickets as t', 's.id = t.status');
