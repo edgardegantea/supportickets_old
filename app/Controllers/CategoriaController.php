@@ -2,18 +2,25 @@
 
 namespace App\Controllers;
 
+use App\Models\CategoryModel;
 use CodeIgniter\RESTful\ResourceController;
 
 class CategoriaController extends ResourceController
 {
-    /**
-     * Return an array of resource objects, themselves in array format
-     *
-     * @return mixed
-     */
+
     public function index()
     {
-        //
+        $db = \Config\Database::connect();
+        $total = $db->table('categories')->countAll();
+        $category = model(CategoryModel::class);
+
+        $data = [
+            'total'         => $total,
+            'title'         => 'Categorías',
+            'categorias'    => $category->orderBy('name', 'ASC')->findAll()
+        ];
+
+        return view('categorias/index', $data);
     }
 
     /**
@@ -23,7 +30,13 @@ class CategoriaController extends ResourceController
      */
     public function show($id = null)
     {
-        //
+        $category = new CategoryModel();
+
+        $data = [
+            'categoria'  => $category->where('id', $id)->first(),
+            'title'   => 'Información de la categoría seleccionada'
+        ];
+        return view('categorias/show', $data);
     }
 
     /**

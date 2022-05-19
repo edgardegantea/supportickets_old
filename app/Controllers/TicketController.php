@@ -91,12 +91,30 @@ class TicketController extends ResourceController
         if ($this->request->getMethod() === 'post' && $this->validate([
             'title' => 'required|min_length[3]|max_length[150]',
             'description'  => 'required',
+            'evidence'     => 'required',
+            'url'          => 'required',
+            'status'       => 'required',
+            'phone'        => 'required',
+            'email'        => 'required',
+            'remote'       => 'required',
+            'dateMeeting'  => 'required',
+            'hourMeeting'  => 'required',
+            'ok'           => 'required'
+
         ])) {
             $ticket->save([
                 'title'         => $this->request->getPost('title'),
                 'slug'          => url_title($this->request->getPost('title'), '-', true),
                 'description'   => $this->request->getPost('description'),
-                'evidence'      => url_title($this->request->getPost('title'), '-', true),
+                'evidence'      => $this->request->getPost('evidence'),
+                'url'           => $this->request->getPost('url'),
+                'status'        => $this->request->getPost('status'),
+                'phone'         => $this->request->getPost('phone'),
+                'email'         => $this->request->getPost('email'),
+                'remote'        => $this->request->getPost('remote'),
+                'dateMeeting'   => $this->request->getPost('dateMeeting'),
+                'hourMeeting'   => $this->request->getPost('hourMeeting'),
+                'ok'            => $this->request->getPost('ok'),
             ]);
 
             echo view('tickets/');

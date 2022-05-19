@@ -59,6 +59,12 @@
         </div>
       </div>
 
+        <div>
+        <a class="navbar-item" href="<?php echo base_url('categorias'); ?>">
+            Categorías
+        </a>
+        </div>
+
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link" href="<?php echo base_url('tickets'); ?>">
           Kanban
