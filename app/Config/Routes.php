@@ -28,6 +28,9 @@ $routes->get('tickets/tableS05', 'TicketController::tableStatusO5');
 $routes->get('tickets/tableS07', 'TicketController::tableStatusO7');
 $routes->resource('tickets', ['controller' => 'TicketController']);
 
+$routes->get('categorias/show/(:num)', 'CategoriaController::show/$1');
+$routes->resource('categorias', ['controller' => 'CategoriaController']);
+
 
 
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
