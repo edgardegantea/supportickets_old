@@ -14,7 +14,7 @@ class Ticket extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['title', 'slug', 'description', 'evidence', 'status', 'category', 'priority'];
+    protected $allowedFields    = ['category', 'priority', 'title',  'slug', 'description', 'evidence', 'url', 'status', 'phone', 'email', 'remote', 'dateMeeting', 'hourMeeting', 'ok'];
 
     // Dates
     protected $useTimestamps = true;

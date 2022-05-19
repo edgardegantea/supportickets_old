@@ -17,16 +17,17 @@ class Ticket extends Migration
             'title'         => ['type' => 'varchar', 'constraint' => 150],
             'slug'          => ['type' => 'varchar', 'constraint' => 150],
             'description'   => ['type' => 'text'],
-            'evidence'      => ['type' => 'varchar', 'constraint' => 150, 'null' => true],
-            'url'           => ['type' => 'varchar', 'constraint' => 255],
-            'status'        => ['type' => 'varchar', 'constraint' => 5],
+            // 'evidence'      => ['type' => 'int', 'constraint' => 12, 'unsigned' => true],
+            'evidence'      => ['type' => 'varchar', 'constraint' => 255, 'null' => true],
+            'url'           => ['type' => 'varchar', 'constraint' => 255, 'null' => true],
+            'status'        => ['type' => 'varchar', 'constraint' => 5, 'null' => true],
             'phone'         => ['type' => 'varchar', 'constraint' => 15],
             'email'         => ['type' => 'varchar', 'constraint' => 80],
-            'remote'        => ['type' => 'varchar', 'constraint' => 50],
+            'remote'        => ['type' => 'varchar', 'constraint' => 50, 'null' => true],
             'dateMeeting'   => ['type' => 'datetime', 'null' => true],
             'hourMeeting'   => ['type' => 'time', 'null' => true],
-            'ok'            => ['type' => 'boolean'],
-            'created_at'    => ['type' => 'datetime', 'null' => false],
+            'ok'            => ['type' => 'boolean', 'null' => true],
+            'created_at'    => ['type' => 'datetime', 'null' => true],
             'updated_at'    => ['type' => 'datetime', 'null' => true],
             'deleted_at'    => ['type' => 'datetime', 'null' => true]
         ]);
@@ -35,6 +36,7 @@ class Ticket extends Migration
         $this->forge->addForeignKey('category', 'categories', 'id');
         $this->forge->addForeignKey('priority', 'priorities', 'id');
         $this->forge->addForeignKey('status', 'status', 'id');
+        // $this->forge->addForeignKey('evidence', 'evidences', 'id');
         $this->forge->createTable('tickets', true);
 
         $this->db->enableForeignKeyChecks();

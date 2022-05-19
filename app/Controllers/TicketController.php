@@ -37,7 +37,7 @@ class TicketController extends ResourceController
             'status'    => $status,
             // // 'tickets'   => $tickets->findAll(),
             // 'tickets'   => $tickets->orderBy('status', 'ASC')->findAll()
-            'tickets'   => $tickets->limit(30)
+            'tickets'   => $tickets->orderBy('id', 'desc')->findAll()
         ];
 
         return view('tickets/index', $data);
@@ -89,37 +89,38 @@ class TicketController extends ResourceController
         $ticket = model(Ticket::class);
 
         if ($this->request->getMethod() === 'post' && $this->validate([
-            'title' => 'required|min_length[3]|max_length[150]',
-            'description'  => 'required',
-            'evidence'     => 'required',
-            'url'          => 'required',
-            'status'       => 'required',
-            'phone'        => 'required',
-            'email'        => 'required',
-            'remote'       => 'required',
-            'dateMeeting'  => 'required',
-            'hourMeeting'  => 'required',
-            'ok'           => 'required'
+
+            'category' =>       'required',
+            'priority' =>       'required',
+            'title' =>          'required',
+            'description' =>    'required',
+            'phone' =>          'required',
+            'email' =>          'required'
 
         ])) {
             $ticket->save([
+
+                'category'      => $this->request->getPost('category'),
+                'priority'      => $this->request->getPost('priority'),
                 'title'         => $this->request->getPost('title'),
                 'slug'          => url_title($this->request->getPost('title'), '-', true),
                 'description'   => $this->request->getPost('description'),
                 'evidence'      => $this->request->getPost('evidence'),
                 'url'           => $this->request->getPost('url'),
-                'status'        => $this->request->getPost('status'),
+                // 'status'        => $this->request->getPost('status'),
                 'phone'         => $this->request->getPost('phone'),
-                'email'         => $this->request->getPost('email'),
-                'remote'        => $this->request->getPost('remote'),
-                'dateMeeting'   => $this->request->getPost('dateMeeting'),
-                'hourMeeting'   => $this->request->getPost('hourMeeting'),
-                'ok'            => $this->request->getPost('ok'),
+                'email'         => $this->request->getPost('email')
+                // 'remote'        => $this->request->getPost('remote'),
+                // 'dateMeeting'   => $this->request->getPost('dateMeeting'),
+                // 'hourMeeting'   => $this->request->getPost('hourMeeting'),
+                // 'ok'            => $this->request->getPost('ok')
+
             ]);
 
-            echo view('tickets/');
+            // echo view('tickets/index');
+            return redirect()->to('tickets/');
         } else {
-            return redirect->route('tickets/new');
+            return redirect()->to('tickets/new');
         }
     }
 
@@ -151,7 +152,7 @@ class TicketController extends ResourceController
         $data = [
             'title'     => 'Tickets en modo tabular',
             // 'tickets'   => $ticket->orderBy('status', 'ASC')->findAll()
-            'tickets'   => $ticket->limit(50)
+            'tickets'   => $ticket->orderBy('id', 'desc')->findAll()
         ];
 
         return view('tickets/table', $data);

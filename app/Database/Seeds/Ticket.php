@@ -13,7 +13,7 @@ class Ticket extends Seeder
 
         $tickets = [];
 
-        for ($i=0; $i < 6000; $i++) { 
+        for ($i=0; $i < 20; $i++) {
             $created_at = $faker->dateTime();
             $updated_at = $faker->dateTimeBetween($created_at);
             $deleted_at = $faker->dateTimeBetween($updated_at);

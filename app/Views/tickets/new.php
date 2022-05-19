@@ -13,37 +13,48 @@
 			</div>
 		</div>
 
-		<div class="field">
-			<label class="label">Categoría:</label>
-			<div class="control">
-				<div class="select">
-					<select name="priority">
-						
-						<option disabled selected>Seleccione la categoría</option>
-						<?php foreach ($categories as $c): ?>
-							<option value="<?= $c['id'] ?>"><?= $c['name'] ?></option>
-						<?php endforeach ?>
+        <div class="columns">
 
-					</select>
-				</div>
-			</div>
-		</div>
+            <div class="column">
+                <div class="field">
+                    <label class="label">Categoría:</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name="category">
 
-		<div class="field">
-			<label class="label">Prioridad:</label>
-			<div class="control">
-				<div class="select">
-					<select name="priority">
-						
-						<option disabled selected>Seleccione la prioridad</option>
-						<?php foreach ($priorities as $p): ?>
-							<option value="<?= $p['id'] ?>"><?= $p['name'] ?></option>
-						<?php endforeach ?>
+                                <option disabled selected>Seleccione la categoría</option>
+                                <?php foreach ($categories as $c): ?>
+                                    <option value="<?= $c['id'] ?>"><?= $c['name'] ?></option>
+                                <?php endforeach ?>
 
-					</select>
-				</div>
-			</div>
-		</div>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="field">
+                    <label class="label">Prioridad:</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name="priority">
+
+                                <option disabled selected>Seleccione la prioridad</option>
+                                <?php foreach ($priorities as $p): ?>
+                                    <option value="<?= $p['id'] ?>"><?= $p['name'] ?></option>
+                                <?php endforeach ?>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
 		
 		<div class="field">
 			<label class="label">Descripción de la falla o situación:</label>
@@ -57,7 +68,7 @@
 			<div class="control">
 				<div class="file is-info has-name">
 					<label class="file-label">
-						<input class="file-input" type="file" name="resume">
+						<input class="file-input" type="file" name="evidence">
 						<span class="file-cta">
 							<span class="file-icon">
 								<i class="fas fa-upload"></i>
@@ -82,22 +93,22 @@
 		</div>
 
 
-		<div class="field">
+		<!--<div class="field">
 			<label class="label">Estado:</label>
 			<div class="control">
 				<div class="select">
 					<select name="status">
-						
+
 						<option disabled selected>Seleccione el estado del ticket</option>
-						<?php foreach ($status as $s): ?>
-							<option value="<?= $s['id'] ?>"><?= $s['name'] ?></option>
-						<?php endforeach ?>
+						<?php /*foreach ($status as $s): */?>
+							<option value="<?/*= $s['id'] */?>"><?/*= $s['name'] */?></option>
+						<?php /*endforeach */?>
 
 					</select>
 				</div>
 			</div>
 		</div>
-
+        -->
 
 		<div class="field">
 			<label class="label">Teléfono de contacto:</label>
@@ -112,7 +123,6 @@
 				<input class="input" type="email" name="email">
 			</div>
 		</div>
-
 
 		<div class="field is-grouped">
 			<div class="control">
