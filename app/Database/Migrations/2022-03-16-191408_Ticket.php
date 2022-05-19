@@ -17,7 +17,7 @@ class Ticket extends Migration
             'title'         => ['type' => 'varchar', 'constraint' => 150],
             'slug'          => ['type' => 'varchar', 'constraint' => 150],
             'description'   => ['type' => 'text'],
-            'evidence'      => ['type' => 'varchar', 'constraint' => 150, 'null' => true],
+            'evidence'      => ['type' => 'int', 'constraint' => 12, 'unsigned' => true],
             'url'           => ['type' => 'varchar', 'constraint' => 255],
             'status'        => ['type' => 'varchar', 'constraint' => 5],
             'phone'         => ['type' => 'varchar', 'constraint' => 15],
@@ -35,6 +35,7 @@ class Ticket extends Migration
         $this->forge->addForeignKey('category', 'categories', 'id');
         $this->forge->addForeignKey('priority', 'priorities', 'id');
         $this->forge->addForeignKey('status', 'status', 'id');
+        $this->forge->addForeignKey('evidence', 'evidences', 'id');
         $this->forge->createTable('tickets', true);
 
         $this->db->enableForeignKeyChecks();
