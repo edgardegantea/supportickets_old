@@ -24,6 +24,8 @@
 			</div>
 		</div>
 
+        <input type="hidden" name="status" value="s01">
+
         <div class="columns">
 
             <div class="column">
