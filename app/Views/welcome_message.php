@@ -13,10 +13,10 @@
 <section class="hero is-link">
     <div class="hero-body">
         <p class="title">
-            Medium hero
+            Sistema de Tickets de Soporte
         </p>
         <p class="subtitle">
-            Medium subtitle
+
         </p>
     </div>
 </section>

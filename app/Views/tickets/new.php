@@ -1,4 +1,15 @@
 <?= $this->extend('layout/main') ?>
+
+
+<?= $this->section('botones') ?>
+<div class="">
+    <a href="/tickets/" class="button is-light">Cancelar</a>
+</div>
+<?= $this->endSection() ?>
+
+
+
+
 <?= $this->section('content') ?>
 
 <section class="section">

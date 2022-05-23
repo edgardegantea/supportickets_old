@@ -3,7 +3,7 @@
 
 <?= $this->section('botones') ?>
     <div class="">
-        <a href="/tickets/new" class="button is-link">Nuevo</a>
+        <a href="/tickets/new" class="button is-light">Nuevo</a>
     </div>
 <?= $this->endSection() ?>
 
@@ -13,7 +13,7 @@
 
 	<section class="section">
 
-		<h1><?= esc($total) ?> registros</h1>
+		<!-- <h1><?= esc($total) ?> registros</h1> -->
 
 
 
