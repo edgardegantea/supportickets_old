@@ -9,7 +9,7 @@
 		<div class="field">
 			<label class="label">Asunto:</label>
 			<div class="control">
-				<input class="input" type="text" name="title">
+				<input class="input" type="text" name="title" style="font-size: x-large">
 			</div>
 		</div>
 
@@ -50,11 +50,7 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
-
-
 		
 		<div class="field">
 			<label class="label">Descripción de la falla o situación:</label>
@@ -110,21 +106,28 @@
 		</div>
         -->
 
-		<div class="field">
-			<label class="label">Teléfono de contacto:</label>
-			<div class="control">
-				<input class="input" type="phone" name="phone">
-			</div>
-		</div>
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Teléfono de contacto:</label>
+                    <div class="control">
+                        <input class="input" type="phone" name="phone">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="field">
+                    <label class="label">Correo electrónico:</label>
+                    <div class="control">
+                        <input class="input" type="email" name="email">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<div class="field">
-			<label class="label">Correo electrónico:</label>
-			<div class="control">
-				<input class="input" type="email" name="email">
-			</div>
-		</div>
 
-		<div class="field is-grouped">
+
+		<div class="field is-grouped is-left">
 			<div class="control">
 				<input class="button is-link is-light" type="reset">
 			</div>

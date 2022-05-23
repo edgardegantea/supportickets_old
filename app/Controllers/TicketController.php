@@ -32,7 +32,7 @@ class TicketController extends ResourceController
         $status = $builder->where('status.id', 'ASC')->get();
 
         $data = [
-            'title'     => 'Otro',
+            'title'     => 'Tickets de soporte',
             'total'     => $total,
             'status'    => $status,
             // // 'tickets'   => $tickets->findAll(),

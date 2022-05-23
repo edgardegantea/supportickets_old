@@ -1,4 +1,13 @@
 <?= $this->extend('layout/main'); ?>
+
+
+<?= $this->section('botones') ?>
+<div class="">
+    <a href="/tickets/new" class="button is-link">Nuevo</a>
+</div>
+<?= $this->endSection() ?>
+
+
 <?= $this->section('content'); ?>
 
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">

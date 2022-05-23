@@ -1,9 +1,22 @@
 <?= $this->extend('layout/main'); ?>
+
+
+<?= $this->section('botones') ?>
+    <div class="">
+        <a href="/tickets/new" class="button is-link">Nuevo</a>
+    </div>
+<?= $this->endSection() ?>
+
+
+
 <?= $this->section('content'); ?>
 
 	<section class="section">
 
 		<h1><?= esc($total) ?> registros</h1>
+
+
+
 
 		<div class="columns is-multiline">
 
