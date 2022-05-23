@@ -107,7 +107,8 @@ class TicketController extends ResourceController
                 'description'   => $this->request->getPost('description'),
                 'evidence'      => $this->request->getPost('evidence'),
                 'url'           => $this->request->getPost('url'),
-                'status'        => $this->request->getPost('status'),
+                // 'status'        => $this->request->getPost('status'),
+                'status'        => 's01',
                 'phone'         => $this->request->getPost('phone'),
                 'email'         => $this->request->getPost('email')
                 // 'remote'        => $this->request->getPost('remote'),
