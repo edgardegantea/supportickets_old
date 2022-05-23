@@ -18,9 +18,9 @@ class KanbanController extends ResourceController
 
         $data = [
             'title' => 'Kanban',
-            'ts01'   => $tickets->where('status', 's01')->findAll(),
-            'ts02'   => $tickets->where('status', 's02')->findAll(),
-            'ts03'   => $tickets->where('status', 's03')->findAll(),
+            'ts01'   => $tickets->where('status', 's01')->orderBy('id', 'desc')->findAll(),
+            'ts02'   => $tickets->where('status', 's02')->orderBy('id', 'desc')->findAll(),
+            'ts03'   => $tickets->where('status', 's03')->orderBy('id', 'desc')->findAll(),
         ];
         return view('kanban/index', $data);
     }
