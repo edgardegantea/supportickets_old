@@ -20,7 +20,7 @@
 		<div class="field">
 			<label class="label">Asunto:</label>
 			<div class="control">
-				<input class="input" type="text" name="title" style="font-size: x-large">
+				<input class="input" required type="text" name="title" style="font-size: x-large; text-transform: uppercase">
 			</div>
 		</div>
 
@@ -31,7 +31,7 @@
                     <label class="label">Categoría:</label>
                     <div class="control">
                         <div class="select">
-                            <select name="category">
+                            <select required name="category">
 
                                 <option disabled selected>Seleccione la categoría</option>
                                 <?php foreach ($categories as $c): ?>
@@ -49,7 +49,7 @@
                     <label class="label">Prioridad:</label>
                     <div class="control">
                         <div class="select">
-                            <select name="priority">
+                            <select required name="priority">
 
                                 <option disabled selected>Seleccione la prioridad</option>
                                 <?php foreach ($priorities as $p): ?>
@@ -66,7 +66,7 @@
 		<div class="field">
 			<label class="label">Descripción de la falla o situación:</label>
 			<div class="control">
-				<textarea class="textarea" name="description"></textarea>
+				<textarea required class="textarea" name="description"></textarea>
 			</div>
 		</div>
 
@@ -122,7 +122,7 @@
                 <div class="field">
                     <label class="label">Teléfono de contacto:</label>
                     <div class="control">
-                        <input class="input" type="phone" name="phone">
+                        <input required class="input" type="tel" name="phone" pattern="{[0-9][3]}-{[0-9][3]}-{[0-9][4]}" accept="application/vnd.apple.numbers">
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@
                 <div class="field">
                     <label class="label">Correo electrónico:</label>
                     <div class="control">
-                        <input class="input" type="email" name="email">
+                        <input required class="input" type="email" name="email">
                     </div>
                 </div>
             </div>

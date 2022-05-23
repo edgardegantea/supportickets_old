@@ -2,10 +2,9 @@
 
 namespace App\Controllers;
 
-use App\Models\Ticket;
 use CodeIgniter\RESTful\ResourceController;
 
-class KanbanController extends ResourceController
+class AuthController extends ResourceController
 {
     /**
      * Return an array of resource objects, themselves in array format
@@ -14,19 +13,7 @@ class KanbanController extends ResourceController
      */
     public function index()
     {
-        $tickets = model(Ticket::class);
-
-        $data = [
-            'title' => 'Kanban',
-            'ts01'   => $tickets->where('status', 's01')->findAll(),
-            'ts02'   => $tickets->where('status', 's02')->findAll(),
-            'ts03'   => $tickets->where('status', 's03')->findAll(),
-        ];
-        return view('kanban/index', $data);
-    }
-
-    public function otro() {
-        return view('kanban/otro');
+        return view('auth/login');
     }
 
     /**

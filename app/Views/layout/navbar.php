@@ -31,19 +31,6 @@
                     <a class="navbar-item" href="<?php echo base_url('tickets/table'); ?>">
                         Tickets (TABULAR)
                     </a>
-                    <a class="navbar-item" href="<?php echo base_url('tickets/tableS01'); ?>">
-                        No iniciado
-                    </a>
-                    <a class="navbar-item" href="<?php echo base_url('tickets/tableS02'); ?>">
-                        Iniciado
-                    </a>
-                    <a class="navbar-item" href="<?php echo base_url('tickets/tableS05'); ?>">
-                        Finalizados
-                    </a>
-                    <a class="navbar-item" href="<?php echo base_url('tickets/tableS07'); ?>">
-                        Re-abiertos
-                    </a>
-
                     <hr class="navbar-divider">
 
                 </div>
@@ -63,12 +50,12 @@
             </div>
 
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="<?php echo base_url('tickets'); ?>">
+                <a class="navbar-link" href="<?php echo base_url('kanban'); ?>">
                     Kanban
                 </a>
                 <div class="navbar-dropdown is-boxed">
-                    <a class="navbar-item" href="<?php echo base_url('#'); ?>">
-                        Módulo en construcción
+                    <a class="navbar-item" href="<?php echo base_url('kanban'); ?>">
+                        Kanban básico
                     </a>
 
                     <hr class="navbar-divider">
