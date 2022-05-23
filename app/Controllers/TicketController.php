@@ -90,12 +90,13 @@ class TicketController extends ResourceController
 
         if ($this->request->getMethod() === 'post' && $this->validate([
 
-            'category' =>       'required',
-            'priority' =>       'required',
-            'title' =>          'required',
-            'description' =>    'required',
-            'phone' =>          'required',
-            'email' =>          'required'
+            'category'          => 'required',
+            'priority'          => 'required',
+            'status'            => 'required',
+            'title'             => 'required',
+            'description'       => 'required',
+            'phone'             => 'required',
+            'email'             => 'required'
 
         ])) {
             $ticket->save([
@@ -107,8 +108,7 @@ class TicketController extends ResourceController
                 'description'   => $this->request->getPost('description'),
                 'evidence'      => $this->request->getPost('evidence'),
                 'url'           => $this->request->getPost('url'),
-                // 'status'        => $this->request->getPost('status'),
-                'status'        => 's01',
+                'status'        => $this->request->getPost('status'),
                 'phone'         => $this->request->getPost('phone'),
                 'email'         => $this->request->getPost('email')
                 // 'remote'        => $this->request->getPost('remote'),
