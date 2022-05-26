@@ -27,6 +27,9 @@
 
         <div class="columns">
 
+            <input type="hidden" name="status" value="s01">
+
+<!--
             <div class="column">
                 <div class="field">
                     <label class="label">Estado:</label>
@@ -39,6 +42,25 @@
                     </div>
                 </div>
             </div>
+-->
+            <div class="column">
+                <div class="field">
+                    <label class="label">Área:</label>
+                    <div class="control">
+                        <div class="select">
+                            <select required name="area">
+
+                                <option disabled selected>Seleccione el área</option>
+                                <?php foreach ($areas as $a): ?>
+                                    <option value="<?= $a['id'] ?>"><?= $a['name'] ?></option>
+                                <?php endforeach ?>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="column">
                 <div class="field">

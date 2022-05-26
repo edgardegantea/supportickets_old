@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Auth;
 
 use CodeIgniter\RESTful\ResourceController;
 
-class AuthController extends ResourceController
+class LoginController extends ResourceController
 {
     /**
      * Return an array of resource objects, themselves in array format
@@ -14,6 +14,15 @@ class AuthController extends ResourceController
     public function index()
     {
         return view('auth/login');
+    }
+
+    public function signin()
+    {
+        if (!$this->validate([
+            
+        ])){
+
+        }
     }
 
     /**

@@ -19,6 +19,12 @@ $routes->set404Override();
 $routes->setAutoRoute(true);
 
 
+
+$routes->group('auth', ['namespace' => 'App\Controllers\Auth'], function ($routes) {
+    $routes->get('auth/login', 'LoginController::index', ['as' => 'login']);
+});
+
+
 $routes->get('/', 'Home::index');
 
 // $routes->get('tickets/show', 'TicketController::show');
@@ -37,7 +43,7 @@ $routes->get('kanban/otro', 'KanbanController::otro');
 $routes->resource('kanban', ['controller' => 'kanbanController']);
 
 
-$routes->get('auth/login', 'AuthController::index');
+
 
 
 

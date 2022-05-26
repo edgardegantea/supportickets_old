@@ -74,11 +74,14 @@ class TicketController extends ResourceController
         $categories = model('CategoryModel');
         $priorities = model('PriorityModel');
         $status = model('StatusModel');
+        $areas = model('AreaModel');
+
         $data = [
             'title'         => 'Nuevo ticket de soporte',
             'status'        => $status->findAll(),
             'priorities'    => $priorities->findAll(),
             'categories'    => $categories->findAll(),
+            'areas'         => $areas->findAll()
         ];
         return view('tickets/new', $data);
     }
@@ -90,6 +93,7 @@ class TicketController extends ResourceController
 
         if ($this->request->getMethod() === 'post' && $this->validate([
 
+            'area'              => 'required',
             'category'          => 'required',
             'priority'          => 'required',
             'status'            => 'required',
@@ -101,6 +105,7 @@ class TicketController extends ResourceController
         ])) {
             $ticket->save([
 
+                'area'          => $this->request->getPost('area'),
                 'category'      => $this->request->getPost('category'),
                 'priority'      => $this->request->getPost('priority'),
                 'title'         => $this->request->getPost('title'),

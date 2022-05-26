@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Area extends Model
+class AreaModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'areas';
@@ -14,7 +14,7 @@ class Area extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['name', 'description', 'phone', 'email', 'active'];
 
     // Dates
     protected $useTimestamps = false;
