@@ -208,4 +208,15 @@ class TicketController extends ResourceController
     }
 
 
+    public function seguimiento()
+    {
+        $ticket = new Ticket();
+        $data = [
+            'title'     => 'Seguimiento',
+            // 'tickets'   => $ticket->where('status', 's07')->findAll()
+        ];
+        return view('tickets/seguimiento', $data);
+    }
+
+
 }

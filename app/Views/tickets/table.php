@@ -84,11 +84,11 @@
 							<td class="">
 								<div class="buttons has-addons is-centered">
 									<a class="button is-small" href="<?= base_url('tickets/show/'.$ticket['id']); ?>">
-										<span class="mdi mdi-16px mdi-eye"></span>
+										<span class="mdi mdi-24px mdi-eye"></span>
 									</a>
-									<a href="#" class="button is-small"><span class="mdi mdi-16px mdi-file-document-edit"></span></a>
-									<a href="#" class="button is-small is-danger is-selected">
-										<span class="mdi mdi-16px mdi-delete-circle"></span>
+									<a href="#" class="button is-small"><span class="mdi mdi-24px mdi-file-document-edit"></span></a>
+									<a href="#" class="button is-small has-text-danger">
+										<span class="mdi mdi-24px mdi-delete"></span>
 									</a>
 								</div>
 

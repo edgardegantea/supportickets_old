@@ -2,9 +2,11 @@
 
 
 <?= $this->section('botones') ?>
-<div class="">
-    <a href="/tickets/" class="button is-light">Regresar</a>
-</div>
+
+
+<?php
+    echo '<a href="'.$_SERVER['HTTP_REFERER'].'">Ejemplo de Botón Regresar en PHP</a>';
+?>
 <?= $this->endSection() ?>
 
 
@@ -12,14 +14,25 @@
 <?= $this->section('content'); ?>
 
 	<section class="section">
-    La información mostrada corresponde al ticket de soporte
+
 
 	<div class="">
 		<!-- Main container -->
-		<nav class="level">
+		<nav class="level column">
 		  <!-- Left side -->
 		  <div class="level-left">
+		    
 		    <div class="level-item">
+				<p class="is-size-1 is-uppercase has-text-dark">
+		  		<?= esc($ticket['title']); ?>
+		  	  </p>
+		    </div>
+		  </div>
+
+		  <!-- Right side -->
+		  <div class="level-right">
+
+		  	<div class="level-item">
 
 		  		  <?php if ($ticket['status'] == 's01'): ?>
 					  <span class="tag is-light is-bordered is-large">
@@ -35,19 +48,14 @@
 					  </span>
 		  		  <?php endif; ?>
 
+		  		  <p class="level-item">
+		  		  	<a href="<?php echo base_url('tickets/seguimiento'); ?>" class="button is-success">SEGUIMIENTO
+		  		  	</a>
+		  		  </p>
+
 		    </div>
-		    <div class="level-item">
-				<p class="is-size-1 has-text-link">
-		  		<?= esc($ticket['title']); ?>
-		  	  </p>
-		    </div>
-		  </div>
 
-		  <!-- Right side -->
-		  <div class="level-right">
-		    <p class="level-item"><a>Seguimiento</a></p>
-
-
+		    
 
 		    <!-- REVISAR PARA SOLUCIONAR ENVÍO DE EMAIL -->
 		    <?php
@@ -100,6 +108,12 @@
 				<a target="_blank" href="https://api.whatsapp.com/send?phone=+5212312339545&text=Hola, Esta es una prueba de conexión desde PHP. Supportickets 1.0" class="button is-primary">WhatsApp</a>
 			</p>
 			<a href="whatsapp://send?text=Hola, Index.pe&phone=+5212312066656&abid=+12 346 678 910">+12 346 678 910</a>
+			-->
+
+			<!--
+			<p class="level-item is-large">
+				<a href="whatsapp://send?text=Hola, Index.pe&phone=+5212311660698&abid=+52123110660698">WhatsApp de prueba</a>
+			</p>
 			-->
 		  
 		  </div>

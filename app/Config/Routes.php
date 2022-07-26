@@ -34,6 +34,7 @@ $routes->get('tickets/tableS01', 'TicketController::tableStatusO1');
 $routes->get('tickets/tableS02', 'TicketController::tableStatusO2');
 $routes->get('tickets/tableS05', 'TicketController::tableStatusO5');
 $routes->get('tickets/tableS07', 'TicketController::tableStatusO7');
+$routes->get('tickets/seguimiento', 'TicketController::seguimiento');
 $routes->resource('tickets', ['controller' => 'TicketController']);
 
 $routes->get('categorias/show/(:num)', 'CategoriaController::show/$1');
