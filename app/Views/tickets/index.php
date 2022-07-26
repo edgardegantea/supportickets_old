@@ -27,18 +27,21 @@
 
                             <?php if ($ticket['status'] == 's01'): ?>
                             <header class="card-header has-background-link">
-                                <?php elseif ($ticket['status'] == 's02'): ?>
-                                <header class="card-header has-background-info">
-                                    <?php elseif ($ticket['status'] == 's05'): ?>
-                                    <header class="card-header has-background-primary">
-                                        <?php else: ?>
-                                        <header class="card-header has-background-dark">
-                                            <?php endif; ?>
-                                            <p class="card-header-title has-text-white">
-                                                <?= esc($ticket['title']) ?>
-                                            </p>
-                                        </header>
-
+                                
+                            <?php elseif ($ticket['status'] == 's02'): ?>
+                            <header class="card-header has-background-info">
+                            
+                            <?php elseif ($ticket['status'] == 's05'): ?>
+                            <header class="card-header has-background-primary">
+                            
+                            <?php else: ?>
+                            <header class="card-header has-background-dark">
+                            
+                            <?php endif; ?>
+                                <p class="card-header-title has-text-white">
+                                    <?= esc($ticket['title']) ?>
+                                </p>
+                            </header>
                         </a>
 
                         <div class="card-content">

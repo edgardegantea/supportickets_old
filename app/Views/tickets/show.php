@@ -46,9 +46,62 @@
 		  <!-- Right side -->
 		  <div class="level-right">
 		    <p class="level-item"><a>Seguimiento</a></p>
+
+
+
+		    <!-- REVISAR PARA SOLUCIONAR ENVÍO DE EMAIL -->
+		    <?php
+
+		    	$correo_destino = esc($ticket['email']);
+		    	$asunto = 'Mensaje de prueba';
+		    	$mensaje = 'Contenido del mensaje de prueba';
+				// mail($correo_destino, $asunto, $mensaje);
+			?>
+			<!-- -------------------------------------- -->
+
 		    <p class="level-item is-large">
-				<a class="button is-success">Contactar</a>
+				<a href="mailto:<?= esc($correo_destino); ?>" class="button is-link">
+					<span class="icon-text has-text-light">
+					<span class="icon">
+				    	<i class="fa-solid fa-envelope"></i>
+					</span>
+					<span>Enviar email</span>
+					</span>
+				</a>
 			</p>
+
+
+
+			<?php
+
+				$segm1 = "https://api.whatsapp.com/send?phone=+521";
+				$numero = esc($ticket['phone']);
+				$segm2 = "&text=Hola, Esta es una prueba de conexión desde PHP. Supportickets 1.0";
+
+				$cadena = '' . $segm1 . '' . $numero . '' . $segm2;
+
+			?>
+
+			<p class="level-item is-large">
+				
+				<a target="_blank" href="<?= esc($cadena); ?>" class="button is-link">
+					<span class="icon-text has-text-light">
+					<span class="icon">
+				    	<i class="fa-brands fa-whatsapp"></i>
+					</span>
+					<span>WhatsApp</span>
+				</span>
+				</a>
+			</p>
+
+
+			<!--
+			<p class="level-item is-large">
+				<a target="_blank" href="https://api.whatsapp.com/send?phone=+5212312339545&text=Hola, Esta es una prueba de conexión desde PHP. Supportickets 1.0" class="button is-primary">WhatsApp</a>
+			</p>
+			<a href="whatsapp://send?text=Hola, Index.pe&phone=+5212312066656&abid=+12 346 678 910">+12 346 678 910</a>
+			-->
+		  
 		  </div>
 		</nav>
 
